@@ -371,8 +371,9 @@
 
 		public IVariablesContext GlobalVariablesContext { get; private set; }
 		public IVariablesContext ThreadVariablesContext { get; private set; }
+	    public INestedVariablesContext NestedThreadVariablesContext { get; }
 
-		public bool IsErrorEnabled
+	    public bool IsErrorEnabled
 		{
 			get
 			{
