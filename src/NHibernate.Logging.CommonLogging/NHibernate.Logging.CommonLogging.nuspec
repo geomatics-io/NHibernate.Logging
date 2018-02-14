@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <!-- Required elements-->
+    <id>Geomatics.IO.NHibernate.Logging</id>
+    <version>$version$</version>
+    <description>Connects NHibernate logging infrastructure to Common.Logging.</description>
+    <authors>Matthias Gernand, Christian Junk</authors>
+
+    <!-- Optional elements -->
+    <title>Geomatics.IO.NHibernate.Logging</title>
+    <owners>Matthias Gernand, Christian Junk</owners>
+    <projectUrl>https://github.com/geomatics-io/NHibernate.Logging</projectUrl>
+    <licenseUrl>https://raw.githubusercontent.com/geomatics-io/NHibernate.Logging/master/LICENSE.md</licenseUrl>
+    <iconUrl>https://github.com/geomatics-io/NHibernate.Logging/raw/master/NHibernate.Logging.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <tags>NHibernate csharp csharp-library dotnet logger logging</tags>
+
+    <dependencies>
+      <dependency id="NHibernate" version="4.0.0.4000" />
+    </dependencies>
+  </metadata>
+</package>
