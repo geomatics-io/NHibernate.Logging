@@ -1,7 +1,10 @@
 NHibernate Logging Providers
 ============================
-The current version **4.0.3** is available as [NuGet package](http://nuget.org/packages/NHibernate.Logging/).
-This version is built against NHibernate 4.0.3 and Common.Logging 3.1.0.
+This is a fork of https://github.com/mgernand/NHibernate.Logging. It was updated to NHibernate 4.x and some implementations where adopted.
+
+[![Build status](https://ci.appveyor.com/api/projects/status/dbexo510w4kfg6s2?svg=true)](https://ci.appveyor.com/project/geomatics/nhibernate-logging)
+[![NuGet version](https://badge.fury.io/nu/Geomatics.IO.NHibernate.Logging.svg)](https://badge.fury.io/nu/Geomatics.IO.NHibernate.Logging)
+
 
 Project Description
 -------------------
@@ -20,12 +23,6 @@ each of them with NHibernate via Common.Logging 3.1.0 abstraction.
 
 Review the [NHibernate Wiki](http://nhibernate.info/doc/howto/various/using-nlog-via-common-logging-with-nhibernate.html) for additional informations. Please leave a comment if you 
 like it or not. ;-)
-
-NuGet available
----------------
-The repository contains a *.nuspec file for creating a NuGet package since the last release. 
-The file was created and contributed by [Matthew Ferreira](https://nuget.org/packages?q=Matthew%20Ferreira). 
-Thanks again for the effort.
 
 Getting Started
 ---------------
