@@ -3,7 +3,7 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("NHibernate.Logging.CommonLogging")]
-[assembly: AssemblyDescription("Common.Logging 3.x.x Logging Provider for NHibernate 4.x.x")]
+[assembly: AssemblyDescription("Common.Logging 3.x Logging Provider for NHibernate 4.x")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("NHibernate.Logging.CommonLogging")]
