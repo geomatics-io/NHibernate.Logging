@@ -2,22 +2,45 @@
 <package >
   <metadata>
     <!-- Required elements-->
+
+    <!-- The identifier that must be unique within the hosting gallery -->
     <id>Geomatics.IO.NHibernate.Logging</id>
+
+    <!-- The package version number that is used when resolving dependencies -->
     <version>$version$</version>
+
+    <!-- The description can be used in package manager UI. Note that the
+            nuget.org gallery uses information you add in the portal. -->
     <description>Connects NHibernate logging infrastructure to Common.Logging.</description>
+
+    <!-- Authors contain text that appears directly on the gallery -->
     <authors>Matthias Gernand, Christian Junk</authors>
 
     <!-- Optional elements -->
     <title>Geomatics.IO.NHibernate.Logging</title>
-    <owners>Matthias Gernand, Christian Junk</owners>
+
+    <!-- Owners are typically nuget.org identities that allow gallery
+            users to easily find other packages by the same owners.  -->
+    <owners>christianjunk, geomatics</owners>
+
+    <!-- License and project URLs provide links for the gallery -->
     <projectUrl>https://github.com/geomatics-io/NHibernate.Logging</projectUrl>
     <licenseUrl>https://raw.githubusercontent.com/geomatics-io/NHibernate.Logging/master/LICENSE.md</licenseUrl>
+
+    <!-- The icon is used in Visual Studio's package manager UI -->
     <iconUrl>https://github.com/geomatics-io/NHibernate.Logging/raw/master/NHibernate.Logging.png</iconUrl>
+
+    <!-- If true, this value prompts the user to accept the license when
+            installing the package. -->
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
+
+    <!-- Tags appear in the gallery and can be used for tag searches -->
     <tags>NHibernate csharp csharp-library dotnet logger logging</tags>
 
+	<!-- Dependencies are automatically installed when the package is installed -->
     <dependencies>
-      <dependency id="NHibernate" version="4.0.0.4000" />
+      <dependency id="NHibernate" version="[4.0.0.4000,4.1.1.4000]" />
+      <dependency id="Common.Logging" version="3.0.0" />
     </dependencies>
   </metadata>
 </package>
