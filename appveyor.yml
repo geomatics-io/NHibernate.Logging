@@ -10,7 +10,7 @@ branches:
   only:
   - master
 before_build:
-  - nuget restore
+  - nuget restore NHibernate.Logging.sln
 build_script:
 - ps: .\build.ps1
 artifacts:
