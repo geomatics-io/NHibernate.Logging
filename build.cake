@@ -27,7 +27,7 @@ Task("Restore-NuGet-Packages")
     .IsDependentOn("Clean")
     .Does(() =>
 {
-    NuGetRestore("./src/NHibernate.Logging.CommonLogging.sln");
+    NuGetRestore("./src/NHibernate.Logging.sln");
 });
 
 Task("Build")
@@ -37,13 +37,13 @@ Task("Build")
     if(IsRunningOnWindows())
     {
       // Use MSBuild
-      MSBuild("./src/NHibernate.Logging.CommonLogging.sln", settings =>
+      MSBuild("./src/NHibernate.Logging.sln", settings =>
         settings.SetConfiguration(configuration));
     }
     else
     {
       // Use XBuild
-      XBuild("./src/NHibernate.Logging.CommonLogging.sln", settings =>
+      XBuild("./src/NHibernate.Logging.sln", settings =>
         settings.SetConfiguration(configuration));
     }
 });
