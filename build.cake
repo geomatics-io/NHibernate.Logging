@@ -1,4 +1,4 @@
-#tool nuget:?package=NUnit.Runners&version=2.6.4
+#tool nuget:?package=NUnit.ConsoleRunner&version=3.4.0
 //////////////////////////////////////////////////////////////////////
 // ARGUMENTS
 //////////////////////////////////////////////////////////////////////
@@ -27,7 +27,7 @@ Task("Restore-NuGet-Packages")
     .IsDependentOn("Clean")
     .Does(() =>
 {
-    NuGetRestore("./src/NHibernate.Logging.sln");
+    NuGetRestore("./src/NHibernate.Logging.CommonLogging.sln");
 });
 
 Task("Build")
@@ -37,13 +37,13 @@ Task("Build")
     if(IsRunningOnWindows())
     {
       // Use MSBuild
-      MSBuild("./src/NHibernate.Logging.sln", settings =>
+      MSBuild("./src/NHibernate.Logging.CommonLogging.sln", settings =>
         settings.SetConfiguration(configuration));
     }
     else
     {
       // Use XBuild
-      XBuild("./src/NHibernate.Logging.sln", settings =>
+      XBuild("./src/NHibernate.Logging.CommonLogging.sln", settings =>
         settings.SetConfiguration(configuration));
     }
 });
@@ -52,29 +52,9 @@ Task("Run-Unit-Tests")
     .IsDependentOn("Build")
     .Does(() =>
 {
-    NUnit("./src/**/bin/" + configuration + "/*.Tests.dll", new NUnitSettings {
-        NoResults = true, X86 = true
+    NUnit3("./src/**/bin/" + configuration + "/*.Tests.dll", new NUnit3Settings {
+        NoResults = true
         });
-});
-
-Task("BuildPackages")
-    .IsDependentOn("Run-Unit-Tests")
-    .Does(() =>
-{
-    var nuGetPackSettings = new NuGetPackSettings
-    {
-        OutputDirectory = "./artifacts",
-        IncludeReferencedProjects = true,
-        Properties = new Dictionary<string, string>
-        {
-            { "Configuration", "Release" }
-        }
-    };
-
-    MSBuild("./src/Logging.Tests/Logging.Tests.csproj", new MSBuildSettings().SetConfiguration("Release").SetMSBuildPlatform(MSBuildPlatform.x86));
-
-    MSBuild("./src/NHibernate.Logging.CommonLogging/NHibernate.Logging.CommonLogging.csproj", new MSBuildSettings().SetConfiguration("Release"));
-    NuGetPack("./src/NHibernate.Logging.CommonLogging/NHibernate.Logging.CommonLogging.csproj", nuGetPackSettings);
 });
 
 //////////////////////////////////////////////////////////////////////
@@ -82,7 +62,7 @@ Task("BuildPackages")
 //////////////////////////////////////////////////////////////////////
 
 Task("Default")
-    .IsDependentOn("BuildPackages");
+    .IsDependentOn("Run-Unit-Tests");
 
 //////////////////////////////////////////////////////////////////////
 // EXECUTION
